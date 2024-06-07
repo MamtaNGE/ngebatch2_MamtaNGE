@@ -71,12 +71,25 @@ app.get('/courses/byid',(req,res)=>{
     res.send('Good Evening User, you are enrolled in Angular with courseid as  - '+ query);
 });
 
+//use() is a middleware function
+//express.json() - easily matches the content type on request as application/json
+app.use(express.json())
+
 //POST Request
 //endpoint for a post request
 
 app.post('/loginUser',(req,res)=>{
     console.log("To create a user login - pass the info as a post body",req.body);
     const object = req.body.user;
+    //send a response
+    res.json({result:object})
+});
+
+//another post request:POST request  - createprod 
+
+app.post('/createProd',(req,res)=>{
+    console.log("To create a user product - pass the info as a post body",req.body);
+    const object = req.body.prod;
     //send a response
     res.json({result:object})
 });
