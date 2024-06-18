@@ -154,5 +154,5 @@ queryFood(5)
     console.log('Food found:', food);
   })
   .catch((error) => {
-    console.error('Error:', error.message); // Outputs: Error: Food with ID '5' not found
+    console.error('Error:', error.message);
   });
